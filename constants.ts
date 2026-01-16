@@ -142,8 +142,7 @@ export const PROJECTS: Project[] = [
     tags: ["Book Ghostwriting", "Long-Form", "Confidential NDA"],
     link: "https://ezenwa-blessing.netlify.app/"
   }
-];
-
+]; 
 export const JOURNEY: TimelineEvent[] = [
   {
     id: 1,
