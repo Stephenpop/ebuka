@@ -1,0 +1,9 @@
+
+{
+  "name": "Anyaibe Ebuka - Premium Portfolio",
+  "description": "High-end developer portfolio for Anyaibe Ebuka, featuring cinematic animations and interactive AI.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}

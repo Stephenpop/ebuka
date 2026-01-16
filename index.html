@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anyaibe Ebuka | Premier Full Stack Web Engineer</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="title" content="Anyaibe Ebuka | Premier Full Stack Web Engineer">
+  <meta name="description" content="Portfolio of Anyaibe Ebuka, specializing in high-performance Full Stack Web development, custom Next.js architectures, and scalable digital products.">
+  <meta name="keywords" content="Ebuka Anyaibe, Full Stack Developer, Next.js Expert, Web Engineer, Nigeria, UI/UX, Bero Technologies">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ebuka.dev/">
+  <meta property="og:title" content="Anyaibe Ebuka | Premier Full Stack Web Engineer">
+  <meta property="og:description" content="Engineering high-performance web ecosystems and scalable full-stack products with precision and cinematic design.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=1200">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://ebuka.dev/">
+  <meta property="twitter:title" content="Anyaibe Ebuka | Premier Full Stack Web Engineer">
+  <meta property="twitter:description" content="Engineering high-performance web ecosystems and scalable full-stack products.">
+  <meta property="twitter:image" content="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=1200">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://img.icons8.com/color/48/000000/code.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+  
+  <!-- Smooth Scroll (Optimized for Mobile) -->
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
+  
+  <style>
+    body {
+      background-color: #050505;
+      color: #ffffff;
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    .font-serif {
+      font-family: 'Playfair Display', serif;
+    }
+    ::selection {
+      background: #2563eb;
+      color: #fff;
+    }
+    ::-webkit-scrollbar {
+      width: 4px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #050505;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #333;
+    }
+    .text-outline {
+      -webkit-text-stroke: 1px rgba(255,255,255,0.2);
+      color: transparent;
+    }
+    @media (max-width: 768px) {
+      .text-outline {
+        -webkit-text-stroke: 0.5px rgba(255,255,255,0.2);
+      }
+    }
+    .noise-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      opacity: 0.03;
+      z-index: 9999;
+      background: url('https://grainy-gradients.vercel.app/noise.svg');
+    }
+    @media (max-width: 768px) {
+      .noise-bg { display: none; }
+    }
+  </style>
+
+<script type="importmap">
+{
+  "imports": {
+    "framer-motion": "https://esm.sh/framer-motion@^12.26.2",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "@google/genai": "https://esm.sh/@google/genai@^1.36.0",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="md:cursor-none">
+  <div class="noise-bg"></div>
+  <div id="root"></div>
+  <script>
+    const isMobile = window.innerWidth < 768;
+    if (!isMobile) {
+      const lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        orientation: 'vertical',
+        smoothWheel: true,
+      });
+
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+      requestAnimationFrame(raf);
+    }
+  </script>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
