@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { PROJECTS } from '../constants';
+import { PROJECTS } from '../src/constants';
 import { ArrowUpRight } from 'lucide-react';
 
 interface ProjectsProps {
