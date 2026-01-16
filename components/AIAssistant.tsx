@@ -99,6 +99,10 @@ const AIAssistant: React.FC = () => {
     setIsLoading(true);
     try {
       if (!chatInstance.current) chatInstance.current = getGeminiChat();
+      if (!chatInstance.current) {
+        setMessages(prev => [...prev, { role: 'model', text: "AI assistant is currently unavailable. Please check back later!" }]);
+        return;
+      }
       const response = await chatInstance.current.sendMessage({ message: userMessage });
       const botText = response.text || "Ebuka is currently pushing updates. Try again in a moment!";
       setMessages(prev => [...prev, { role: 'model', text: botText }]);

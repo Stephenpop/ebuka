@@ -1,9 +1,10 @@
 import { GoogleGenAI } from "@google/genai";
 const API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
-if (!API_KEY) {
-  throw new Error("Missing VITE_GEMINI_API_KEY");
-}
+
 export const getGeminiChat = () => {
+  if (!API_KEY) {
+    return null;
+  }
   const ai = new GoogleGenAI({ apiKey: API_KEY });
   return ai.chats.create({
     model: "gemini-3-flash-preview",
