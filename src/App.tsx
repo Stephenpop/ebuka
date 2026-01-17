@@ -1,17 +1,17 @@
 
 import React, { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import Loader from '../components/Loader';
-import CustomCursor from '../components/CustomCursor';
-import Navbar from '../components/Navbar';
-import Hero from '../components/Hero';
-import Services from '../components/Services';
-import Skills from '../components/Skills';
-import Projects from '../components/Projects';
-import About from '../components/About';
-import Footer from '../components/Footer';
-import AIAssistant from '../components/AIAssistant';
-import ContactPage from '../components/ContactPage';
+import Loader from './components/Loader';
+import CustomCursor from './components/CustomCursor';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import Services from './components/Services';
+import Skills from './components/Skills';
+import Projects from './components/Projects';
+import About from './components/About';
+import Footer from './components/Footer';
+import AIAssistant from './components/AIAssistant';
+import ContactPage from './components/ContactPage';
 import { PageType } from './types';
 
 const App: React.FC = () => {

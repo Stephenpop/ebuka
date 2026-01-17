@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { PROJECTS } from '../src/constants';
+import { PROJECTS } from '../constants';
 import { ArrowUpRight } from 'lucide-react';
 
 interface ProjectsProps {
@@ -14,14 +14,14 @@ const Projects: React.FC<ProjectsProps> = ({ isFullPage = false }) => {
   return (
     <section id="work" className={`py-16 md:py-32 px-6 md:px-20 bg-[#050505] min-h-screen ${isFullPage ? 'pt-28 md:pt-40' : ''}`}>
       <div className="flex flex-col md:flex-row justify-between items-baseline mb-12 md:mb-20 gap-4 md:gap-6">
-        <motion.h2 
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          className="text-4xl md:text-9xl font-black uppercase tracking-tighter"
-        >
-          Selected <br /> <span className="text-outline">Works</span>
-        </motion.h2>
+        <motion.h2
+  initial={{ opacity: 0, x: -30 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  viewport={{ once: true }}
+  className="text-5xl xs:text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black uppercase tracking-tighter leading-tight"
+>
+  Selected <br className="sm:hidden" /> <span className="text-outline">Works</span>
+</motion.h2>
         <div className="max-w-md">
           <p className="text-white/40 md:text-white/50 text-[9px] md:text-sm uppercase tracking-widest leading-loose">
             High-performance full-stack architectures built for scalability. Focusing on React, Next.js, and custom CMS backends.
