@@ -1,8 +1,9 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { SERVICES } from '../constants';
 import { Globe, Database, Figma, Cpu, CheckCircle2, ArrowRight } from 'lucide-react';
+// Assuming Next.js - if using Vite/React Router, change to: import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 const icons: Record<string, any> = { Globe, Database, Figma, Cpu };
 
@@ -14,7 +15,10 @@ const Services: React.FC = () => {
         <motion.h2 
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
-          className="text-6xl md:text-9xl font-black uppercase tracking-tighter mb-8"
+          // CHANGED: Reduced sizes to prevent page breaking
+          // Old: text-6xl md:text-9xl
+          // New: text-4xl sm:text-6xl md:text-7xl lg:text-8xl
+          className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase tracking-tighter mb-8 break-words"
         >
           Specialized <br /> <span className="text-outline">Capabilities</span>
         </motion.h2>
@@ -60,9 +64,10 @@ const Services: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="mt-12 flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.4em] text-blue-500 cursor-pointer">
+                {/* CHANGED: Wrapped in Link to make it functional */}
+                <Link href="/projects" className="mt-12 flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.4em] text-blue-500 cursor-pointer hover:text-blue-400 transition-colors">
                   See Work in action <ArrowRight size={14} />
-                </div>
+                </Link>
               </motion.div>
             );
           })}
