@@ -2,10 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { PROJECTS } from '../constants';
 import { ArrowUpRight } from 'lucide-react';
-// IF USING NEXT.JS (Keep this):
+// Assuming Next.js. If using Vite/React-Router, switch to: import { Link } from 'react-router-dom';
 import Link from 'next/link';
-// IF USING VITE/REACT-ROUTER (Uncomment this and remove the line above):
-// import { Link } from 'react-router-dom';
 
 interface ProjectsProps {
   isFullPage?: boolean;
@@ -15,21 +13,19 @@ const Projects: React.FC<ProjectsProps> = ({ isFullPage = false }) => {
   const displayedProjects = isFullPage ? PROJECTS : PROJECTS.slice(0, 4);
 
   return (
-    <section 
-      id="work" 
-      className={`py-16 md:py-32 px-6 md:px-20 bg-[#050505] min-h-screen ${isFullPage ? 'pt-28 md:pt-40' : ''}`}
-    >
+    <section id="work" className={`py-16 md:py-32 px-6 md:px-20 bg-[#050505] min-h-screen ${isFullPage ? 'pt-28 md:pt-40' : ''}`}>
       <div className="flex flex-col md:flex-row justify-between items-baseline mb-12 md:mb-20 gap-4 md:gap-6">
         <motion.h2
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          // CHANGED: Reduced text sizes slightly to prevent breaking (e.g., lg:text-9xl -> lg:text-8xl)
+          // CHANGED: Reduced text size to prevent breaking the page layout
+          // Old: text-5xl ... lg:text-9xl
+          // New: text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl
           className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase tracking-tighter leading-tight"
         >
           Selected <br className="sm:hidden" /> <span className="text-outline">Works</span>
         </motion.h2>
-        
         <div className="max-w-md">
           <p className="text-white/40 md:text-white/50 text-[9px] md:text-sm uppercase tracking-widest leading-loose">
             High-performance full-stack architectures built for scalability. Focusing on React, Next.js, and custom CMS backends.
@@ -59,6 +55,7 @@ const Projects: React.FC<ProjectsProps> = ({ isFullPage = false }) => {
                 transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                 src={project.image}
                 alt={project.title}
+                // Use object-contain so the full image is visible (no cropping).
                 className="w-full h-full object-contain bg-black/20"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -68,7 +65,6 @@ const Projects: React.FC<ProjectsProps> = ({ isFullPage = false }) => {
                 </div>
               </div>
             </a>
-            
             {/* Content Section */}
             <div className="flex flex-col gap-2 md:gap-4 px-1">
               <div className="flex justify-between items-center text-[8px] md:text-[10px] font-bold uppercase tracking-[0.3em] text-white/20 md:text-white/30">
@@ -95,9 +91,8 @@ const Projects: React.FC<ProjectsProps> = ({ isFullPage = false }) => {
 
       {!isFullPage && (
         <div className="mt-16 md:mt-32 flex justify-center">
-          {/* CHANGED: Wrapped button in Link to make it functional */}
-          {/* Ensure '/projects' matches the actual route to your projects page */}
-          <Link href="/projects" passHref> 
+          {/* CHANGED: Wrapped in Link to make it functional. Ensure href points to your projects page. */}
+          <Link href="/projects" className="inline-block">
             <motion.button 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
